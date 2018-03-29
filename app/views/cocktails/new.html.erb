@@ -1,2 +1,11 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.label "What is the name of your Cocktail?" %>
+      <%= f.input :name %>
+      <%= f.submit %>
+      <% end %>
+      </div>
+    </div>
+  </div>

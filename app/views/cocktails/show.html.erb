@@ -1,2 +1,17 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="drink-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('');">
+  <div class="banner-content">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
+<div class="container">
+  <div class="dose">
+    <h1>This drink is made of:</h1>
+    <% @doses.each do |dose| %>
+    <p><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, dose_path(dose), method: :delete, data: {confirm: 'are you sure?'} %></p>
+    <% end %>
+  </div>
+  <div class="dose-form">
+    <%= render 'doses/form-doses' %>
+  </div>
+  <%= link_to "back", cocktails_path %>
+</div>
