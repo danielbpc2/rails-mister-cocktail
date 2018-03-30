@@ -10,4 +10,6 @@ import 'bootstrap';
 import { loadDynamicBannerText } from '../components/banner';
 
 loadDynamicBannerText();
+AOS.init();
+
 console.log('Hello World from Webpacker')
