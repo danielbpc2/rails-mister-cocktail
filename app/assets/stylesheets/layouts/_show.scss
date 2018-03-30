@@ -1,0 +1,15 @@
+.dose {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.photo {
+  border-radius: 3px;
+}
+.doses {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: white;
+  border-top: 3px solid rgb(0,100,200);
+  margin-left: 20px;
+}
