@@ -6,7 +6,13 @@
   <div class="row">
   <% @cocktails.each do |cock| %>
     <div class="col-xs-12 col-sm-4">
-      <div data-aos="flip-left" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
+      <% if cock.photo? %>
+      <div data-aos="flip-left" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path cock.photo, height: 300, width: 400, crop: :fill %>')">
+      <% else %>
+      <div data-aos="flip-left" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path 'gt2f18g55h0v8rl0fjw4', height: 300, width: 400, crop: :fill %>')">
+      <% end %>
         <div class="card-description">
           <h2><%= cock.name %></h2>
         </div>

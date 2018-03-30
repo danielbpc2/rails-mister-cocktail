@@ -4,6 +4,11 @@
   </div>
 </div>
 <div class="container">
+<% if @cocktail.photo? %>
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+<% else %>
+<%= cl_image_tag("gt2f18g55h0v8rl0fjw4", width: 400, height: 300, crop: :fill)  %>
+<% end %>
   <div class="dose">
     <h1>This drink is made of:</h1>
     <% @doses.each do |dose| %>
