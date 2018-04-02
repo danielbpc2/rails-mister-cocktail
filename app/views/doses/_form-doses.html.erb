@@ -1,17 +1,20 @@
 <div class="form-container">
-  <div class="dose-form">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="dose-form">
+        <%= simple_form_for([@cocktail, @dose]) do |f|%>
+        <%= f.label "What ingredient do you want to add to this drink?" %>
+        <%= f.association :ingredient%>
+        </div>
 
-    <%= simple_form_for([@cocktail, @dose]) do |f|%>
-    <%= f.label "What ingredient do you want to add to this drink?" %>
-    <%= f.association :ingredient%>
-    </div>
+        <div class="amount">
+          <%= f.label "How much of said ingredient?" %>
+          <%= f.input :description%>
 
-    <div class="amount">
-      <%= f.label "How much of said ingredient?" %>
-      <%= f.input :description%>
-
+          </div>
+        <div class="btn">
+          <%= f.submit class: "btn btn-success" %></div>
+        <% end %>
       </div>
-    <div class="btn">
-      <%= f.submit class: "btn btn-success" %></div>
-    <% end %>
+    </div>
 </div>

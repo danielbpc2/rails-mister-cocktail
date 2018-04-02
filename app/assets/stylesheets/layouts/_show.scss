@@ -13,3 +13,44 @@
   border-top: 3px solid rgb(0,100,200);
   margin-left: 20px;
 }
+
+@media screen and (max-width: 767px) {
+  .dose {
+    display: block;
+  }
+  .photo{
+    transform: scale(0.9);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .doses {
+    margin-left: 0px;
+  }
+  .dose {
+    display: block;
+    margin-left: 0px;
+
+  }
+
+  .photo{
+    transform: scale(0.6);
+    margin-left: -30px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .doses {
+    margin-left: 0px;
+  }
+  .dose {
+    display: block;
+    margin-left: 0px;
+
+  }
+
+  .photo{
+    transform: scale(0.3);
+    margin-left: -30px;
+  }
+}

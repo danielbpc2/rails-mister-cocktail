@@ -7,22 +7,29 @@
     <h1><%= @cocktail.name %></h1>
   </div>
 </div>
+
+<!-- all views but xs -->
 <div class="container">
-  <div class="dose">
-    <div class="photo">
-      <% if @cocktail.photo? %>
-      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill, class: "photo" %>
-      <% else %>
-      <%= cl_image_tag("gt2f18g55h0v8rl0fjw4", width: 400, height: 300, crop: :fill)  %>
-      <% end %>
-    </div>
-      <div class="doses">
-        <h1>This drink is made of:</h1>
-        <% @doses.each do |dose| %>
-        <p><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, dose_path(dose), method: :delete, data: {confirm: 'are you sure?'} %></p>
-        <% end %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="dose">
+        <div class="photo">
+          <% if @cocktail.photo? %>
+          <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill, id: "cock-photo" %>
+          <% else %>
+          <%= cl_image_tag("gt2f18g55h0v8rl0fjw4", width: 400, height: 300, crop: :fill)  %>
+          <% end %>
+        </div>
+          <div class="doses">
+            <h1>This drink is made of:</h1>
+            <% @doses.each do |dose| %>
+            <p><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, dose_path(dose), method: :delete, data: {confirm: 'are you sure?'} %></p>
+            <% end %>
+          </div>
       </div>
+    </div>
   </div>
+
   <div class="dose-form">
     <%= render 'doses/form-doses' %>
   </div>
